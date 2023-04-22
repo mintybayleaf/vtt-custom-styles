@@ -1,2 +1,3 @@
-# custom-vtt-sidebar
-Foundry VTT Sidebar customization without the hassle
+# vtt-custom-styles
+
+Foundry VTT css customization without the hassle
