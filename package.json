@@ -1,0 +1,22 @@
+{
+  "name": "vtt-custom-sidebar",
+  "version": "1.0.0",
+  "description": "Customize the sidebar styles in Foundry VTT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bayleaf1130/vtt-custom-sidebar.git"
+  },
+  "author": "bayleaf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bayleaf1130/vtt-custom-sidebar/issues"
+  },
+  "homepage": "https://github.com/bayleaf1130/vtt-custom-sidebar#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0"
+  }
+}
