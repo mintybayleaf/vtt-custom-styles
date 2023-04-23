@@ -19,7 +19,7 @@
   },
   "esmodules": [
     "scripts/main.js",
-    "scripts/globals.js",
+    "scripts/styles.js",
     "scripts/data.js",
     "scripts/form.js"
   ],

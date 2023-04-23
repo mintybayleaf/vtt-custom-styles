@@ -1,0 +1,28 @@
+.custom-styles-form {
+  width: min(90ch, 60vw);
+  padding: 0.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.custom-styles-form > textarea#custom-styles-content {
+  resize: none;
+  padding: 0.5em;
+  height: min(70ch, calc(50vh - 2rem));
+}
+
+.custom-styles-form-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.custom-styles-form-buttons > button {
+  padding: 0.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 0.5em;
+}

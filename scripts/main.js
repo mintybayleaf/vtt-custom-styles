@@ -1,5 +1,13 @@
-import User from './data.js'
 import UserStyleForm from './form.js'
+
+const module = {
+    form: null,
+    initialize: function() {
+        if (!this.form) {
+            this.form = new UserStyleForm(undefined, { user: game.user })
+        }
+    }
+}
 
 /*
  * Insert a button on each player list item so they can customize their styles
@@ -8,14 +16,17 @@ import UserStyleForm from './form.js'
 function createUserButton () {
     const tooltip = game.i18n.localize('USER_BUTTON.title')
     return `
-        <button class='custom-styles-user-button' title=${tooltip}>
+        <button class="custom-styles-user-button" title=${tooltip}>
             <i class="fa-brands fa-css3-alt"></i>
         </button>
     `
 }
 
-Hooks.once('init', () => {
+Hooks.once('ready', () => {
     console.log('Hooking up Custom Styles Module!')
+    module.initialize(game.user)
+    // Inject custom css at startup
+    module.form.user.styles.inject(module.form.user.styles.get().styles, {})
 })
 
 Hooks.on('renderPlayerList', (playerList, html) => {
@@ -23,7 +34,6 @@ Hooks.on('renderPlayerList', (playerList, html) => {
     userItem.append(createUserButton())
 
     html.on('click', '.custom-styles-user-button', (event) => {
-        const user = new User()
-        new UserStyleForm().render(true,  { user })
+        module.form.render(true)
     })
 })

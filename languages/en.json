@@ -1,6 +1,8 @@
 {
   "FORM": {
-    "submit": "Edit"
+    "title": "Custom User CSS Styles",
+    "save": "Save Styles",
+    "clear": "Clear Styles"
   },
   "USER_BUTTON": {
     "title": "Styles"

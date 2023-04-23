@@ -4,7 +4,7 @@
   color: white;
   line-height: normal;
   border: 0;
-  text-align: right;
+  flex-grow: 0;
 }
 
 .custom-styles-user-button > i {
@@ -14,5 +14,5 @@
 .custom-styles-user-button:hover,
 .custom-styles-user-button:focus {
   box-shadow: none;
-  text-shadow: 0 0 5px hotpink;
+  text-shadow: 0 0 5px #b943c1;
 }

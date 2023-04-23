@@ -1,11 +1,13 @@
-<form>
-  <textarea rows="10" cols="33">
-#sidebar {
-  border: 5px solid rebeccapurple;
-  padding: 0.5rem;
-}
-    </textarea>
-  <button type="button" data-action="create">
-    <span>{{localize "FORM.submit"}} <i class="fa-solid fa-pen-to-square"></i></span>
-  </button>
+<form class="custom-styles-form">
+  <textarea id="custom-styles-content" name="styles" rows="10" cols="33" data-dtype="String">{{ styles }}</textarea>
+  <div class="custom-styles-form-buttons">
+    <button type="button" data-action="clear">
+      <span>{{localize "FORM.clear"}}</span>
+      <span><i class="fa-solid fa-eraser"></i></span>
+    </button>
+    <button type="button" data-action="save">
+      <span>{{localize "FORM.save"}}</span>
+      <span><i class="fa-solid fa-pen-to-square"></i></span>
+    </button>
+  </div>
 </form>

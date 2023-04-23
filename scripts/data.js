@@ -1,4 +1,4 @@
-import { MODULE_ID } from './globals.js'
+import { MODULE_ID } from './styles.js'
 
 /*
  * The interface between the foundry data and our api
@@ -9,6 +9,7 @@ import { MODULE_ID } from './globals.js'
 function Styles () {
     this.moduleKey = MODULE_ID
     this.storeKey = 'styles'
+    this.injectId = 'custom-styles--injected-css'
 }
 
 function get(user) {
@@ -26,18 +27,33 @@ function set(user, styles) {
 
 Styles.prototype.set = set
 
-function remove (user) {
+function clear (user) {
     const deletedStyles = {
-        [`-=${user.id}`]: null
+        [`-=${user.id}`]: { styles: null }
     }
     return user?.setFlag(this.moduleKey, this.storeKey, deletedStyles)
 }
 
-Styles.prototype.remove = remove
+Styles.prototype.clear = clear
+
+function inject (styles, {selector = 'head', remove = false}) {
+    if (!remove) {
+        $(selector).append(`
+            <style id="${this.injectId}">
+                ${styles}
+            '</style>
+        `)
+    } else {
+        $(this.injectId).remove()
+    }
+
+}
+
+Styles.prototype.inject = inject
 
 // Styles User
 
-function User(user) {
+function StylesUser(user) {
     this.user = user || game.user // Grab current game user (this is context dependent)
 
     if (!this.user) {
@@ -48,7 +64,8 @@ function User(user) {
     // Bind styles with current user
     this.styles.get = this.styles.get.bind(this.styles, this.user)
     this.styles.set = this.styles.set.bind(this.styles, this.user)
-    this.styles.remove = this.styles.remove.bind(this.styles, this.user)
+    this.styles.clear = this.styles.clear.bind(this.styles, this.user)
 }
 
-export default User
+
+export default StylesUser
