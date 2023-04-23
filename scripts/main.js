@@ -26,7 +26,8 @@ Hooks.once('ready', () => {
     console.log('Hooking up Custom Styles Module!')
     module.initialize(game.user)
     // Inject custom css at startup
-    module.form.user.styles.inject(module.form.user.styles.get().styles, {})
+    const data = module.form.user.styles.get()
+    module.form.user.styles.injectStyles(data?.styles)
 })
 
 Hooks.on('renderPlayerList', (playerList, html) => {

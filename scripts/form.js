@@ -57,13 +57,13 @@ class UserStyleForm extends FormApplication {
         case 'save': {
             const styles = clickedElement.parents('form.custom-styles-form').find('textarea#custom-styles-content').val()
             // Inject the custom styles
-            this.user.styles.inject(styles, {})
+            await this.user.styles.injectStyles(styles)
             this.render()
             break
         }
         case 'clear': {
             await this.user.styles.clear()
-            this.user.styles.inject(null, {remove: true})
+            await this.user.styles.removeStyles()
             this.render()
             break
         }
@@ -78,8 +78,7 @@ class UserStyleForm extends FormApplication {
 
     // This is useful if I add input elements in the future
     async _updateObject(event, { styles }) {
-        console.log('Saving')
-        return await this.user.styles.set(styles)
+        return this.user.styles.set(styles?.trim())
     }
 }
 

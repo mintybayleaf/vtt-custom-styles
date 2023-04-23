@@ -36,20 +36,24 @@ function clear (user) {
 
 Styles.prototype.clear = clear
 
-function inject (styles, {selector = 'head', remove = false}) {
-    if (!remove) {
-        $(selector).append(`
+async function removeStyles () {
+    $(`#${this.injectId}`).remove()
+}
+
+Styles.prototype.removeStyles = removeStyles
+
+async function injectStyles (styles) {
+    if (styles) {
+        await this.removeStyles()
+        $('head').append(`
             <style id="${this.injectId}">
                 ${styles}
             '</style>
         `)
-    } else {
-        $(this.injectId).remove()
     }
-
 }
 
-Styles.prototype.inject = inject
+Styles.prototype.injectStyles = injectStyles
 
 // Styles User
 
