@@ -17,8 +17,13 @@
     "minimum": "9",
     "verified": "10"
   },
-  "esmodules": ["scripts/customize.js"],
-  "styles": ["styles/customize.css"],
+  "esmodules": [
+    "scripts/main.js",
+    "scripts/globals.js",
+    "scripts/data.js",
+    "scripts/form.js"
+  ],
+  "styles": ["styles/form.css", "styles/user.css"],
   "media": [
     {
       "type": "icon",

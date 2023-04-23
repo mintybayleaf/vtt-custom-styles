@@ -1,3 +1,8 @@
 {
-  "CUSTOM-STYLES": {}
+  "FORM": {
+    "submit": "Edit"
+  },
+  "USER_BUTTON": {
+    "title": "Styles"
+  }
 }
