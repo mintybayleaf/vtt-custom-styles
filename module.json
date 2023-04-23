@@ -17,6 +17,13 @@
     "minimum": "9",
     "verified": "10"
   },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "language/en.json"
+    }
+  ],
   "esmodules": [
     "scripts/main.js",
     "scripts/styles.js",
@@ -28,13 +35,6 @@
     {
       "type": "icon",
       "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
-    }
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
     }
   ]
 }
